@@ -44,8 +44,8 @@ public class CardTrick {
         //Search every item in the Card array for a match
         String result = "The card is not in the magic hand.";
         for(int n = 0; n < magicHand.length; n += 1) {
-            if(magicHand[n].getValue() == luckyCard.getValue() &&
-            magicHand[n].getSuit().equals(luckyCard.getSuit())) {
+            if(magicHand[n].getValue() == cardValue &&
+            magicHand[n].getSuit().equals(cardSuit())) {
                 result = "The card is inside the magic hand.";
                 break;
             }
