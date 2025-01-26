@@ -44,7 +44,7 @@ public class CardTrick {
         System.out.print("Enter card value (1 to 13 inclusive): ");
         int cardValue = Integer.parseInt(sc.nextLine());
 
-        System.out.print("Enter suit (0 - Hearts, 1 - Diamonds, 2 - clubs, 3 - spades): ");
+        System.out.print("Enter suit (0 - Hearts, 1 - Diamonds, 2 - spades, 3 - clubs): ");
         String cardSuit = Card.SUITS[Integer.parseInt(sc.nextLine())];
         
         //Search every item in the Card array for a match with the user input
