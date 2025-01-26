@@ -15,13 +15,10 @@ package card;
  * 991756815
  */
 
-import java.util.Scanner;
-
 public class CardTrick {
     
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
         Card[] magicHand = new Card[7];
         
         for (int i=0; i<magicHand.length; i++)
@@ -41,23 +38,21 @@ public class CardTrick {
         //Then report the result here
         // add one luckcard hard code 2,clubs
 
-        System.out.print("Enter card value (1 to 13): ");
-        int cardValue = Integer.parseInt(sc.nextLine());
-        
-        System.out.print("Enter suit (0 - Hearts, 1 - Diamonds, 2 - spades, 3 - clubs): ");
-        String cardSuit = Card.SUITS[Integer.parseInt(sc.nextLine())];
+        //Ace of spades
+        Card luckyCard = new Card();
+        luckyCard.setValue(1);
+        luckyCard.setSuit(Card.SUITS[2]);
         
         //Search every item in the Card array for a match
         String result = "The card is not in the magic hand.";
         for(int n = 0; n < magicHand.length; n += 1) {
-            if(magicHand[n].getValue() == cardValue &&
-            magicHand[n].getSuit().equals(cardSuit)) {
+            if(magicHand[n].getValue() == luckyCard.getValue() &&
+            magicHand[n].getSuit().equals(luckyCard.getSuit())) {
                 result = "The card is inside the magic hand.";
                 break;
             }
         }
         System.out.println(result);
-        sc.close();
     }
     
 }
